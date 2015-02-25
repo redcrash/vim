@@ -28,7 +28,8 @@ set tabstop=4
 set hlsearch
 
 set background=dark
-colorscheme flattown
+"colorscheme flattown
+colorscheme jellybeans
 
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files

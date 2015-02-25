@@ -22,3 +22,6 @@
 [submodule "bundle/vim-sunburst.git"]
 	path = bundle/vim-sunburst.git
 	url = https://github.com/sickill/vim-sunburst.git
+[submodule "bundle/jellybeans.git"]
+	path = bundle/jellybeans.git
+	url = https://github.com/nanotech/jellybeans.vim.git
