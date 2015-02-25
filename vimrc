@@ -22,3 +22,9 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 
+set number
+"highlight LineNr term=bold cterm=bold ctermfg=gray
+highlight LineNr cterm=bold ctermfg=gray
+
+set cursorline
+highlight CursorLine cterm=bold ctermbg=Black
