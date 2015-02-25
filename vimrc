@@ -14,17 +14,19 @@ nmap <C-T> :TagbarToggle<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'dark'
 
+if $COLORTERM == 'gnome-terminal'
+	set t_Co=256
+	let g:solarized_termcolors=256
+endif
+
 set laststatus=2 
 set showmatch
 set visualbell
-
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
-
 set number
-"highlight LineNr term=bold cterm=bold ctermfg=gray
-highlight LineNr cterm=bold ctermfg=gray
-
 set cursorline
-highlight CursorLine cterm=bold ctermbg=Black
+set tabstop=4
+set hlsearch
+
+set background=dark
+colorscheme solarized
+
