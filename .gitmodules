@@ -10,3 +10,15 @@
 [submodule "bundle/vim-distinguished"]
 	path = bundle/vim-distinguished
 	url = https://github.com/Lokaltog/vim-distinguished
+[submodule "bundle/flattown.git"]
+	path = bundle/flattown.git
+	url = https://github.com/blerins/flattown.git
+[submodule "bundle/vim-colors-solarized.git"]
+	path = bundle/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/cobalt2-vim-theme.git"]
+	path = bundle/cobalt2-vim-theme.git
+	url = https://github.com/GertjanReynaert/cobalt2-vim-theme.git
+[submodule "bundle/vim-sunburst.git"]
+	path = bundle/vim-sunburst.git
+	url = https://github.com/sickill/vim-sunburst.git
