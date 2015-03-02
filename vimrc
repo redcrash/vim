@@ -29,7 +29,7 @@ set hlsearch
 
 set background=dark
 "colorscheme flattown
-colorscheme jellybeans
+colorscheme jellybeans.mod
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
