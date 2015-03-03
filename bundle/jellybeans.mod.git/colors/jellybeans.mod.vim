@@ -328,7 +328,7 @@ endif
 call s:X("Visual","","404040","","",s:termBlack)
 call s:X("Cursor",g:jellybeans_background_color,"b0d0f0","","","")
 
-call s:X("LineNr","605958",g:jellybeans_background_color,"none",s:termBlack,"")
+call s:X("LineNr","909090",g:jellybeans_background_color,"none",s:termBlack,"")
 call s:X("CursorLineNr","e0e000","000000","none","White","")
 " HSG Change color for cursor line number
 "call s:X("CursorLineNr","ccc5c4","","none","White","")
@@ -363,7 +363,10 @@ call s:X("PreProc","8fbfdc","","","LightBlue","")
 hi! link Operator Structure
 
 call s:X("Type","ffb964","","","Yellow","")
-call s:X("NonText","606060",g:jellybeans_background_color,"",s:termBlack,"")
+
+" HSG modified, allow transparency bg and change to blue
+"call s:X("NonText","606060",g:jellybeans_background_color,"",s:termBlack,"")
+call s:X("NonText","00bfff","","",s:termBlack,"")
 
 call s:X("SpecialKey","444444","1c1c1c","",s:termBlack,"")
 
