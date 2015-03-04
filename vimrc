@@ -40,6 +40,3 @@ endif
 set incsearch
 set ignorecase
 
-nnoremap <C-right> :tabnext<CR>
-nnoremap <C-left>  :tabprev<CR>
-
