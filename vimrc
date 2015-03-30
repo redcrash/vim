@@ -43,3 +43,5 @@ set ignorecase
 nmap <A-Right> :tabnext <CR>
 nmap <A-Left> :tabprev <CR>
 
+set colorcolumn=80
+
