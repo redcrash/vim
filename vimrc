@@ -40,8 +40,11 @@ endif
 set incsearch
 set ignorecase
 
-nmap <A-Right> :tabnext <CR>
-nmap <A-Left> :tabprev <CR>
+nmap <Tab> :tabnext <CR>
+nmap <S-Tab> :tabprev <CR>
+
+" nmap <A-Right> :tabnext <CR>
+" nmap <A-Left> :tabprev <CR>
 
 set colorcolumn=80
 
