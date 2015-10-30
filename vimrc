@@ -49,5 +49,7 @@ set incsearch
 set ignorecase
 
 nmap <Tab> :tabnext <CR>
-nmap <S-Tab> :tabprev <CR>                                                         
+nmap <S-Tab> :tabprev <CR>
+nmap <C-N> :tabedit <CR>
+
 
