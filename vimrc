@@ -30,6 +30,14 @@ set hlsearch
 set background=dark
 "colorscheme flattown
 colorscheme jellybeans.mod
+" colorscheme molokai
+" let g:molokai_original = 1
+" let g:rehash256 = 1
+
+" From http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+
 
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files
