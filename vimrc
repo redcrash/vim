@@ -18,6 +18,8 @@ if $COLORTERM == 'gnome-terminal'
 	set t_Co=256
 	let g:solarized_termcolors=256
 endif
+	set t_Co=256
+	let g:solarized_termcolors=256
 
 set laststatus=2 
 set showmatch
@@ -35,8 +37,8 @@ colorscheme jellybeans.mod
 " let g:rehash256 = 1
 
 " From http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
-let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+" let &colorcolumn=join(range(81,999),",")
+" highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 
 " Tell vim to remember certain things when we exit
@@ -61,3 +63,16 @@ nmap <S-Tab> :tabprev <CR>
 nmap <C-N> :tabedit <CR>
 
 
+let fortran_have_tabs=1
+if has('syntax') && (&t_Co > 2)
+    syntax enable
+endif
+filetype on
+let s:extfname = expand("%:e")
+if s:extfname ==? "f90"
+  let fortran_free_source=1
+  unlet! fortran_fixed_source
+else
+  let fortran_fixed_source=1
+  unlet! fortran_free_source
+endif
