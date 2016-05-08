@@ -18,8 +18,9 @@ if $COLORTERM == 'gnome-terminal'
 	set t_Co=256
 	let g:solarized_termcolors=256
 endif
-	set t_Co=256
-	let g:solarized_termcolors=256
+" Use 256 colors always
+set t_Co=256
+let g:solarized_termcolors=256
 
 set laststatus=2 
 set showmatch
@@ -30,11 +31,9 @@ set tabstop=4
 set hlsearch
 
 set background=dark
-"colorscheme flattown
+" colorscheme flattown
+" colorscheme jellybeans
 colorscheme jellybeans.mod
-" colorscheme molokai
-" let g:molokai_original = 1
-" let g:rehash256 = 1
 
 " From http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
 " let &colorcolumn=join(range(81,999),",")
