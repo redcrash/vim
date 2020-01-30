@@ -28,3 +28,6 @@
 [submodule "bundle/tagbar.git"]
 	path = bundle/tagbar.git
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "bundle/badwolf.git"]
+	path = bundle/badwolf.git
+	url = https://github.com/sjl/badwolf
