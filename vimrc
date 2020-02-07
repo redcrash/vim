@@ -33,7 +33,7 @@ set hlsearch
 set background=dark
 " colorscheme flattown
 " colorscheme jellybeans
-colorscheme jellybeans.mod
+colorscheme badwolf
 
 " From http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
 " let &colorcolumn=join(range(81,999),",")
@@ -61,7 +61,6 @@ nmap <Tab> :tabnext <CR>
 nmap <S-Tab> :tabprev <CR>
 nmap <C-N> :tabedit <CR>
 
-
 let fortran_have_tabs=1
 if has('syntax') && (&t_Co > 2)
     syntax enable
@@ -75,3 +74,6 @@ else
   let fortran_fixed_source=1
   unlet! fortran_free_source
 endif
+
+set list
+set listchars=eol:$,tab:>.,trail:~,extends:>,precedes:<
