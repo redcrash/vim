@@ -31,3 +31,6 @@
 [submodule "bundle/badwolf.git"]
 	path = bundle/badwolf.git
 	url = https://github.com/sjl/badwolf
+[submodule "bundle/vim-opencl"]
+	path = bundle/vim-opencl
+	url = https://github.com/petRUShka/vim-opencl.git
