@@ -33,7 +33,8 @@ set hlsearch
 set background=dark
 " colorscheme flattown
 " colorscheme jellybeans
-colorscheme badwolf
+" colorscheme badwolf
+colorscheme jellybeans.mod
 
 " From http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
 " let &colorcolumn=join(range(81,999),",")
