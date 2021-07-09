@@ -8,7 +8,7 @@ call pathogen#helptags()
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
 let g:tagbar_show_linenumbers = 1
-""autocmd VimEnter * nested :call tagbar#autoopen(1)
+autocmd VimEnter * nested :call tagbar#autoopen(1)
 nmap <C-T> :TagbarToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1
@@ -58,9 +58,14 @@ endif
 set incsearch
 set ignorecase
 
-nmap <Tab> :tabnext <CR>
-nmap <S-Tab> :tabprev <CR>
-nmap <C-N> :tabedit <CR>
+" Next buffer
+nmap <Tab> :bn <CR>
+" Previous buffer
+nmap <S-Tab> :bp <CR>
+" New buffer
+nmap <C-N> :enew <CR>
+" Close buffer
+nmap <C-C> :bd <CR>
 
 let fortran_have_tabs=1
 if has('syntax') && (&t_Co > 2)
