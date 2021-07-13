@@ -51,6 +51,8 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
 " reopening a file
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put cursor in main window
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 " Auto change the directory to the crrent file I'm working on
