@@ -35,8 +35,10 @@ set background=dark
 colorscheme jellybeans.mod
 
 " From http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
-let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+if (!&diff) " Don't set column coloring limit if using vimdiff
+  let &colorcolumn=join(range(81,999),",")
+  highlight ColorColumn ctermbg=235 guibg=#2c2d27
+endif
 
 
 " Tell vim to remember certain things when we exit
@@ -50,27 +52,29 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put cursor in main window
-" Exit Vim if NERDTree is the only window left.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" autocmd VimEnter * nested :call tagbar#autoopen(1)
-
 " Auto change the directory to the crrent file I'm working on
 autocmd BufEnter * lcd %:p:h
+" If new file is created, set the type to text
+autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
+
+if !(&diff) " Skip NERDTree if using vimdiff
+  autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put cursor in main window
+  " Exit Vim if NERDTree is the only window left.
+  autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+  autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+endif
 
 set incsearch
 set ignorecase
 
 " Next buffer with TAB
-nmap <Tab> :bn <CR>
+nmap <Tab> :bn<CR>
 " Previous buffer with SHIFT+TAB
-nmap <S-Tab> :bp <CR>
+nmap <S-Tab> :bp<CR>
 " New buffer with CTRL-N
-nmap <C-N> :enew <CR>
-" Close buffer with CTRL-C
-nmap <C-C> :bd <CR>
-" Open NERDTree with CTRL-O
-nmap <C-O> :NERDTreeToggle <CR>
+nmap <C-N> :enew<CR>
+" Close buffer with CTRL-X
+nmap <C-X> :bd<CR>
 " Open TagBar with CTRL-T
 nmap <C-T> :TagbarToggle<CR>
 
@@ -78,7 +82,8 @@ let fortran_have_tabs=1
 if has('syntax') && (&t_Co > 2)
     syntax enable
 endif
-filetype plugin indent on
+"filetype plugin indent on
+filetype plugin on
 let s:extfname = expand("%:e")
 if s:extfname ==? "f90"
   let fortran_free_source=1
@@ -90,3 +95,9 @@ endif
 
 set list
 set listchars=eol:$,tab:>.,trail:~,extends:>,precedes:<
+
+" Spell-check TEX, TXT, MarkDown and GIT commit messages
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
+autocmd FileType plaintex setlocal spell
+autocmd FileType text setlocal spell
