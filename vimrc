@@ -57,11 +57,17 @@ autocmd BufEnter * lcd %:p:h
 " If new file is created, set the type to text
 autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
 
-if !(&diff) " Skip NERDTree if using vimdiff
+if !(&diff) " If using VIMDIFF, skip the following
   autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put cursor in main window
   " Exit Vim if NERDTree is the only window left.
   autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
   autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+
+  " Spell-check TEX, TXT, MarkDown and GIT commit messages
+  autocmd FileType markdown setlocal spell
+  autocmd FileType gitcommit setlocal spell
+  autocmd FileType plaintex setlocal spell
+  autocmd FileType text setlocal spell
 endif
 
 set incsearch
@@ -95,9 +101,4 @@ endif
 
 set list
 set listchars=eol:$,tab:>.,trail:~,extends:>,precedes:<
-
-" Spell-check TEX, TXT, MarkDown and GIT commit messages
-autocmd FileType markdown setlocal spell
-autocmd FileType gitcommit setlocal spell
-autocmd FileType plaintex setlocal spell
-autocmd FileType text setlocal spell
+set scrolloff=5
